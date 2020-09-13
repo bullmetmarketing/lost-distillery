@@ -8,7 +8,7 @@ const main = () => {
     this.brSwiperLeftButton = this.brSwiperContainer.querySelector('.left-button');    
     this.brSwiperRightButton = this.brSwiperContainer.querySelector('.right-button');    
     this.brSwiperWrapper = this.brSwiperContainer.querySelectorAll('.br-swiper-wrapper');
-    this.brSwiperButton = this.brSwiperContainer.querySelectorAll('.br-swiper-toggle button');
+    this.brSwiperButton = this.brSwiper.querySelectorAll('.br-swiper-toggle button');
     this.brSwiperProductInfo = this.brSwiperContainer.querySelector('.br-swipe-product-info-title');
     this.brSwiperProductPrize = this.brSwiperContainer.querySelector('.br-swipe-product-info-prize');
     this.brSwiperProductCTA = this.brSwiperContainer.querySelector('.br-swipe-product-info a');
@@ -26,7 +26,7 @@ const main = () => {
     this.productsToShow = 5;
     this.productList = [];
     this.lockPosition = 0;
-    this.swiperActive = "test1"
+    this.swiperActive = "classic"
   };
 
   const view = new function() {
@@ -108,6 +108,10 @@ const main = () => {
       selectors.selectedSwiper = this.resetedSwipersWrapper().filter( swiper => swiper.id === model.swiperActive)[0];
       selectors.selectedSwiper.classList.remove("unselected");
       selectors.selectedSwiper.classList.add("selected");
+    };
+    this.toggleSwipperButton = (button) => {
+      selectors.brSwiperButton.forEach(button => button.classList.remove("button-active"))
+      button.classList.add("button-active");
     }
   };
 
@@ -179,6 +183,7 @@ const main = () => {
     this.unify = (e) => { return e.changedTouches ? e.changedTouches[0] : e };
     this.selectSwiper = (e) => {
       model.swiperActive = e.target.dataset.swiper
+      view.toggleSwipperButton(e.target);
       view.setStarterSwipper();
       view.setStartingPosition();
     }

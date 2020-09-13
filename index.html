@@ -8,7 +8,7 @@
   <meta name="description" content="The Lost Distillery Company - El perfil del whisky detalla la nariz, el cuerpo y el final del whisky con gran detalle. El hecho de embotellar en botella
   de color negro es por un homenaje a las botellas de la dé cada de 1700.">
   <link href="style.css" rel="stylesheet" title="br-style">
-  <script src="scriptes6.js"></script>
+  <script src="script.js"></script>
 </head>
 <body>
   <nav></nav>
@@ -19,65 +19,122 @@
     <section class="br-swiper animation-start-app">
       <h1 class="br-swiper-title">The Lost Distillery Company</h1>
       <h2>Descubre nuestros productos</h2>
+      <article class="br-swiper-toggle">
+        <button class="button-active" data-swiper="classic">Classic Collection</button>
+        <button data-swiper="archivist">Archivist Collection</button>
+        <button data-swiper="vintage">Vintage Collection</button>
+      </article>
       <article class="br-swiper-container">
-        <article class="br-swiper-toggle">
-          <button data-swiper="test1">Test 1</button>
-          <button data-swiper="test2">Test 2</button>
-          <!-- <button data-swiper="test3">Test 3</button> -->
-        </article>
         <div class="left-button"></div>
         <div class="right-button"></div>
-        <article class="br-swiper-wrapper unselected" id="test1">
-          <div class="default" data-list="0" data-product="Whisky escocés Old Particular de Douglas Laing" data-prize="XX,XX €">
-            <a href="#" target="_blank">
-              <img src="img/benrinnes.png" title="marques de legarda crianza 2016" alt="Whisky escocés Old Particular de Douglas Laing">
+        <article class="br-swiper-wrapper unselected" id="classic">
+          <div class="default" data-list="0" data-product="Auchnagie The Lost Distillery Classic Collection" data-prize="59,65 €">
+            <a href="https://www.bullmet.com/whisky-escoces-auchnagie-the-lost-distillery-classic-collection-de-70cl-y-43-alc" target="_blank">
+              <img src="img/whisky-escoces-auchnagie-the-lost-distillery-classic-collection-de-70cl-y-43-alc.png" title="Whisky escocés Auchnagie The Lost Distillery Classic Collection de 70cl y 43% alc" alt="Whisky escocés Auchnagie The Lost Distillery Classic Collection de 70cl y 43% alc">
             </a>
           </div>
-          <div class="default" data-list="1" data-product="Whisky escocés Old Particular de Douglas Laing" data-prize="XX,XX €">
-            <a href="#" target="_blank">
-              <img src="img/longmorn.png" title="marques de legarda reserva 2014" alt="Whisky escocés Old Particular de Douglas Laing">
+          <div class="default" data-list="1" data-product="Stratheden The Lost Distillery Classic Collection" data-prize="59,65 €">
+            <a href="https://www.bullmet.com/whisky-escoces-stratheden-the-lost-distillery-classic-collection-de-70cl-y-43-alc" target="_blank">
+              <img src="img/whisky-escoces-stratheden-the-lost-distillery-classic-collection-de-70cl-y-43-alc.png" title="Whisky escocés Stratheden The Lost Distillery Classic Collection de 70cl y 43% alc" alt="Whisky escocés Stratheden The Lost Distillery Classic Collection de 70cl y 43% alc">
             </a>
           </div>
-          <div class="default" data-list="2" data-product="Whisky escocés Old Particular de Douglas Laing" data-prize="XX,XX €">
-            <a href="#" target="_blank">
-              <img src="img/mortlach.png" title="marques de legarda reserva 2014" alt="Whisky escocés Old Particular de Douglas Laing">
+          <div class="default" data-list="2" data-product="Gerston The Lost Distillery Classic Collection" data-prize="59,65 €">
+            <a href="https://www.bullmet.com/whisky-escoces-gerston-the-lost-distillery-classic-selection-de-70cl-y-43-alc" target="_blank">
+              <img src="img/whisky-escoces-gerston-the-lost-distillery-classic-selection-de-70cl-y-43-alc.png" title="Whisky escocés Gerston The Lost Distillery Classic Collection de 70cl y 43% alc" alt="Whisky escocés Gerston The Lost Distillery Classic Collection de 70cl y 43% alc">
             </a>
           </div>
-          <div class="default" data-list="3" data-product="Whisky escocés Old Particular de Douglas Laing" data-prize="XX,XX €">
-            <a href="#" target="_blank">
-              <img src="img/talisker.png" title="marques de legarda reserva 2014" alt="Whisky escocés Old Particular de Douglas Laing">
+          <div class="default" data-list="3" data-product="Jericho The Lost Distillery Classic Collection" data-prize="59,65 €">
+            <a href="https://www.bullmet.com/whisky-escoces-jericho-the-lost-distillery-classic-collection-de-70cl-y-43-alc" target="_blank">
+              <img src="img/whisky-escoces-jericho-the-lost-distillery-classic-collection-de-70cl-y-43-alc.png" title="Whisky escocés Jericho The Lost Distillery Classic Collection de 70cl y 43% alc" alt="Whisky escocés Jericho The Lost Distillery Classic Collection de 70cl y 43% alc">
             </a>
           </div>
-          <div class="default" data-list="4" data-product="Whisky escocés Old Particular de Douglas Laing" data-prize="XX,XX €">
-            <a href="#" target="_blank">
-              <img src="img/strathclyde.png" title="marques de legarda reserva 2014" alt="Whisky escocés Old Particular de Douglas Laing">
+          <div class="default" data-list="4" data-product="Lossit The Lost Distillery Classic Collection" data-prize="59,65 €">
+            <a href="https://www.bullmet.com/whisky-escoces-lossit-the-lost-distillery-classic-collection-de-70cl-y-43-alc" target="_blank">
+              <img src="img/whisky-escoces-lossit-the-lost-distillery-classic-collection-de-70cl-y-43-alc.png" title="Whisky escocés Lossit The Lost Distillery Classic Collection de 70cl y 43% alc" alt="Whisky escocés Lossit The Lost Distillery Classic Collection de 70cl y 43% alc">
+            </a>
+          </div>
+          <div class="default" data-list="5" data-product="Towiemore The Lost Distillery Classic Collection" data-prize="59,65 €">
+            <a href="https://www.bullmet.com/whisky-escoces-towiemore-the-lost-distillery-classic-collection-de-70cl-y-43-alc" target="_blank">
+              <img src="img/whisky-escoces-towiemore-the-lost-distillery-classic-collection-de-70cl-y-43-alc.png" title="Whisky escocés Towiemore The Lost Distillery Classic Collection de 70cl y 43% alc" alt="Whisky escocés Towiemore The Lost Distillery Classic Collection de 70cl y 43% alc">
+            </a>
+          </div>
+          <div class="default" data-list="6" data-product="Dalaruan The Lost Distillery Classic Collection" data-prize="59,65 €">
+            <a href="https://www.bullmet.com/whisky-escoces-dalaruan-the-lost-distillery-classic-collection-de-70cl-y-43-alc" target="_blank">
+              <img src="img/whisky-escoces-dalaruan-the-lost-distillery-classic-collection-de-70cl-y-43-alc.png" title="Whisky escocés Dalaruan The Lost Distillery Classic Collection de 70cl y 43% alc" alt="Whisky escocés Dalaruan The Lost Distillery Classic Collection de 70cl y 43% alc">
             </a>
           </div>
         </article>
-        <article class="br-swiper-wrapper unselected" id="test2">
-          <div class="default" data-list="0" data-product="Weeeee" data-prize="XX,XX €">
-            <a href="#" target="_blank">
-              <img src="img/benrinnes.png" title="marques de legarda crianza 2016" alt="Whisky escocés Old Particular de Douglas Laing">
+        <article class="br-swiper-wrapper unselected" id="archivist">
+          <div class="default" data-list="0" data-product="Auchnagie The Lost Distillery Archivist Selection" data-prize="89,55 €">
+            <a href="https://www.bullmet.com/whisky-escoces-auchnagie-the-lost-distillery-archivist-selection" target="_blank">
+              <img src="img/whisky-escoces-auchnagie-the-lost-distillery-archivist-selection.png" title="Whisky escocés Auchnagie The Lost Distillery Archivist Selection de 70cl y 46% alc" alt="Whisky escocés Auchnagie The Lost Distillery Archivist Selection de 70cl y 46% alc">
             </a>
           </div>
-          <div class="default" data-list="1" data-product="weee" data-prize="XX,XX €">
-            <a href="#" target="_blank">
-              <img src="img/longmorn.png" title="marques de legarda reserva 2014" alt="weee">
+          <div class="default" data-list="1" data-product="Stratheden The Lost Distillery Archivist Selection" data-prize="89,55 €">
+            <a href="https://www.bullmet.com/whisky-escoces-stratheden-the-lost-distillery-archivist-selection" target="_blank">
+              <img src="img/whisky-escoces-stratheden-the-lost-distillery-archivist-selection.png" title="Whisky escocés Stratheden The Lost Distillery Archivist Selection de 70cl y 46% alc" alt="Whisky escocés Stratheden The Lost Distillery Archivist Selection de 70cl y 46% alc">
             </a>
           </div>
-          <div class="default" data-list="2" data-product="weee" data-prize="XX,XX €">
-            <a href="#" target="_blank">
-              <img src="img/mortlach.png" title="marques de legarda reserva 2014" alt="weee">
+          <div class="default" data-list="2" data-product="Gerston The Lost Distillery Archivist Selection" data-prize="89,55 €">
+            <a href="https://www.bullmet.com/whisky-escoces-gerston-the-lost-distillery-archivist-selection" target="_blank">
+              <img src="img/whisky-escoces-gerston-the-lost-distillery-archivist-selection.png" title="Whisky escocés Gerston The Lost Distillery Archivist Selection de 70cl y 46% alc" alt="Whisky escocés Gerston The Lost Distillery Archivist Selection de 70cl y 46% alc">
             </a>
           </div>
-          <div class="default" data-list="3" data-product="weee" data-prize="XX,XX €">
-            <a href="#" target="_blank">
-              <img src="img/talisker.png" title="marques de legarda reserva 2014" alt="weee">
+          <div class="default" data-list="3" data-product="Jericho The Lost Distillery Archivist Selection" data-prize="89,55 €">
+            <a href="https://www.bullmet.com/whisky-escoces-jericho-the-lost-distillery-archivist-selection" target="_blank">
+              <img src="img/whisky-escoces-jericho-the-lost-distillery-archivist-selection.png" title="Whisky escocés Jericho The Lost Distillery Archivist Selection de 70cl y 46% alc" alt="Whisky escocés Jericho The Lost Distillery Archivist Selection de 70cl y 46% alc">
             </a>
           </div>
-          <div class="default" data-list="4" data-product="weee" data-prize="XX,XX €">
-            <a href="#" target="_blank">
-              <img src="img/strathclyde.png" title="marques de legarda reserva 2014" alt="weee">
+          <div class="default" data-list="4" data-product="Lossit The Lost Distillery Archivist Selection" data-prize="89,55 €">
+            <a href="https://www.bullmet.com/whisky-escoces-lossit-the-lost-distillery-archivist-selection" target="_blank">
+              <img src="img/whisky-escoces-lossit-the-lost-distillery-archivist-selection.png" title="Whisky escocés Lossit The Lost Distillery Archivist Selection de 70cl y 46% alc" alt="Whisky escocés Lossit The Lost Distillery Archivist Selection de 70cl y 46% alc">
+            </a>
+          </div>
+          <div class="default" data-list="5" data-product="Towiemore The Lost Distillery Archivist Selection" data-prize="89,55 €">
+            <a href="https://www.bullmet.com/whisky-escoces-towiemore-the-lost-distillery-archivist-selection" target="_blank">
+              <img src="img/whisky-escoces-towiemore-the-lost-distillery-archivist-selection.png" title="Whisky escocés Towiemore The Lost Distillery Archivist Selection de 70cl y 46% alc" alt="Whisky escocés Towiemore The Lost Distillery Archivist Selection de 70cl y 46% alc">
+            </a>
+          </div>
+          <div class="default" data-list="6" data-product="Dalaruan The Lost Distillery Archivist Selection" data-prize="89,55 €">
+            <a href="https://www.bullmet.com/whisky-escoces-dalaruan-the-lost-distillery-archivist-selection" target="_blank">
+              <img src="img/whisky-escoces-dalaruan-the-lost-distillery-archivist-selection.png" title="Whisky escocés Dalaruan The Lost Distillery Archivist Selection de 70cl y 46% alc" alt="Whisky escocés Dalaruan The Lost Distillery Archivist Selection de 70cl y 46% alc">
+            </a>
+          </div>
+        </article>
+        <article class="br-swiper-wrapper unselected" id="vintage">
+          <div class="default" data-list="0" data-product="Auchnagie The Lost Distillery Vintage Selection" data-prize="185,95 €">
+            <a href="https://www.bullmet.com/whisky-escoces-auchnagie-the-lost-distillery-vintage-selection" target="_blank">
+              <img src="img/whisky-escoces-auchnagie-the-lost-distillery-vintage-selection.png" title="Whisky escocés Auchnagie The Lost Distillery Vintage Selection de 70cl y 46% alc" alt="Whisky escocés Auchnagie The Lost Distillery Vintage Selection de 70cl y 46% alc">
+            </a>
+          </div>
+          <div class="default" data-list="1" data-product="Stratheden The Lost Distillery Vintage Selection" data-prize="185,95 €">
+            <a href="https://www.bullmet.com/whisky-escoces-stratheden-the-lost-distillery-vintage-selection" target="_blank">
+              <img src="img/whisky-escoces-stratheden-the-lost-distillery-vintage-selection.png" title="Whisky escocés Stratheden The Lost Distillery Vintage Selection de 70cl y 46% alc" alt="Whisky escocés Stratheden The Lost Distillery Vintage Selection de 70cl y 46% alc">
+            </a>
+          </div>
+          <div class="default" data-list="2" data-product="Gerston The Lost Distillery Vintage Selection" data-prize="185,95 €">
+            <a href="https://www.bullmet.com/whisky-escoces-gerston-the-lost-distillery-vintage-selection" target="_blank">
+              <img src="img/whisky-escoces-gerston-the-lost-distillery-vintage-selection.png" title="Whisky escocés Gerston The Lost Distillery Vintage Selection de 70cl y 46% alc" alt="Whisky escocés Gerston The Lost Distillery Vintage Selection de 70cl y 46% alc">
+            </a>
+          </div>
+          <div class="default" data-list="3" data-product="Jericho The Lost Distillery Vintage Selection" data-prize="185,95 €">
+            <a href="https://www.bullmet.com/whisky-escoces-jericho-the-lost-distillery-vintage-selection" target="_blank">
+              <img src="img/whisky-escoces-jericho-the-lost-distillery-vintage-selection.png" title="Whisky escocés Jericho The Lost Distillery Vintage Selection de 70cl y 46% alc" alt="Whisky escocés Jericho The Lost Distillery Vintage Selection de 70cl y 46% alc">
+            </a>
+          </div>
+          <div class="default" data-list="4" data-product="Lossit The Lost Distillery Vintage Selection" data-prize="185,95 €">
+            <a href="https://www.bullmet.com/whisky-escoces-lossit-the-lost-distillery-vintage-selection" target="_blank">
+              <img src="img/whisky-escoces-lossit-the-lost-distillery-vintage-selection.png" title="Whisky escocés Lossit The Lost Distillery Vintage Selection de 70cl y 46% alc" alt="Whisky escocés Lossit The Lost Distillery Vintage Selection de 70cl y 46% alc">
+            </a>
+          </div>
+          <div class="default" data-list="5" data-product="Towiemore The Lost Distillery Vintage Selection" data-prize="185,95 €">
+            <a href="https://www.bullmet.com/whisky-escoces-towiemore-the-lost-distillery-vintage-selection" target="_blank">
+              <img src="img/whisky-escoces-towiemore-the-lost-distillery-vintage-selection.png" title="Whisky escocés Towiemore The Lost Distillery Vintage Selection de 70cl y 46% alc" alt="Whisky escocés Towiemore The Lost Distillery Vintage Selection de 70cl y 46% alc">
+            </a>
+          </div>
+          <div class="default" data-list="6" data-product="Dalaruan The Lost Distillery Vintage Selection" data-prize="185,95 €">
+            <a href="https://www.bullmet.com/whisky-escoces-dalaruan-the-lost-distillery-vintage-selection" target="_blank">
+              <img src="img/whisky-escoces-dalaruan-the-lost-distillery-vintage-selection.png" title="Whisky escocés Dalaruan The Lost Distillery Vintage Selection de 70cl y 46% alc" alt="Whisky escocés Dalaruan The Lost Distillery Vintage Selection de 70cl y 46% alc">
             </a>
           </div>
         </article>
