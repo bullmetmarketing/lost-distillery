@@ -20,9 +20,14 @@
       <h1 class="br-swiper-title">The Lost Distillery Company</h1>
       <h2>Descubre nuestros productos</h2>
       <article class="br-swiper-container">
+        <article class="br-swiper-toggle">
+          <button data-swiper="test1">Test 1</button>
+          <button data-swiper="test2">Test 2</button>
+          <!-- <button data-swiper="test3">Test 3</button> -->
+        </article>
         <div class="left-button"></div>
         <div class="right-button"></div>
-        <article class="br-swiper-wrapper">
+        <article class="br-swiper-wrapper unselected" id="test1">
           <div class="default" data-list="0" data-product="Whisky escocés Old Particular de Douglas Laing" data-prize="XX,XX €">
             <a href="#" target="_blank">
               <img src="img/benrinnes.png" title="marques de legarda crianza 2016" alt="Whisky escocés Old Particular de Douglas Laing">
@@ -49,7 +54,35 @@
             </a>
           </div>
         </article>
+        <article class="br-swiper-wrapper unselected" id="test2">
+          <div class="default" data-list="0" data-product="Weeeee" data-prize="XX,XX €">
+            <a href="#" target="_blank">
+              <img src="img/benrinnes.png" title="marques de legarda crianza 2016" alt="Whisky escocés Old Particular de Douglas Laing">
+            </a>
+          </div>
+          <div class="default" data-list="1" data-product="weee" data-prize="XX,XX €">
+            <a href="#" target="_blank">
+              <img src="img/longmorn.png" title="marques de legarda reserva 2014" alt="weee">
+            </a>
+          </div>
+          <div class="default" data-list="2" data-product="weee" data-prize="XX,XX €">
+            <a href="#" target="_blank">
+              <img src="img/mortlach.png" title="marques de legarda reserva 2014" alt="weee">
+            </a>
+          </div>
+          <div class="default" data-list="3" data-product="weee" data-prize="XX,XX €">
+            <a href="#" target="_blank">
+              <img src="img/talisker.png" title="marques de legarda reserva 2014" alt="weee">
+            </a>
+          </div>
+          <div class="default" data-list="4" data-product="weee" data-prize="XX,XX €">
+            <a href="#" target="_blank">
+              <img src="img/strathclyde.png" title="marques de legarda reserva 2014" alt="weee">
+            </a>
+          </div>
+        </article>
         <article class="br-swipe-product-info">
+          <p class="br-swipper-product-counter"></p>
           <p class="br-swipe-product-info-title"></p>
           <p class="br-swipe-product-info-prize"></p>
           <a target="_blank">
