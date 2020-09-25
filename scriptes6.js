@@ -31,7 +31,7 @@ const main = () => {
 
   const view = new function() {
     this.setProductElements = () => {
-      model.productList = [...selectors.selectedSwiper.querySelectorAll('.default')];
+      model.productList = Array.prototype.slice.call(selectors.selectedSwiper.querySelectorAll('.default'));
     }
     this.setProductWidth = () => {
       model.containerWidth = selectors.brSwiperContainer.offsetWidth
@@ -97,7 +97,9 @@ const main = () => {
     };
     this.resetedSwipersWrapper = () => {
       view.resetClasses();
-      const wrappers = [...selectors.brSwiperWrapper].map((wrapper) => {
+      const wrappers = Array.prototype.slice.call(selectors.brSwiperWrapper);
+      wrappers.forEach((wrapper) => {
+        console.log(selectors.brSwiperWrapper,wrappers, wrapper);
         wrapper.classList.remove("selected")
         wrapper.classList.add("unselected")
         return wrapper
@@ -211,6 +213,8 @@ const mainIe = () => {
     this.page = document.querySelector('body');
     this.brSwiperContainer = this.page.querySelectorAll('.br-swiper-container');
     this.brSwiperWrapper = this.page.querySelectorAll('.br-swiper-wrapper');
+    this.brHeader = this.page.querySelector('.br-header');
+    this.brSwiperToggle = this.page.querySelector('.br-swiper-toggle');
     this.brSwiperDefault = this.page.querySelectorAll('.default');
     this.brHistoryImgContainer = this.page.querySelectorAll('.br-history-se-ctnt-block-img-container')
     this.brHistoryImg = this.page.querySelectorAll('.br-history-se-ctnt-block-img')
@@ -232,6 +236,8 @@ const mainIe = () => {
       this.toggleIeClasses(selectors.brHistoryImg, 'br-history-se-ctnt-block-img');
       this.toggleIeClasses(selectors.brHistoryTextContainer, 'br-history-se-ctnt-block-text');    
       this.toggleIeClasses(selectors.brHistoryBlock, 'br-history-se-ctnt-block');
+      this.toggleIeClasses(selectors.brHeader, 'br-header');
+      this.toggleIeClasses(selectors.brSwiperToggle, 'br-swiper-toggle');
       this.addProductCTA();
     }
     this.toggleIeClasses = (selectorsNode, className) => {

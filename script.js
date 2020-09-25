@@ -1,47 +1,5 @@
 "use strict";
 
-function _toConsumableArray(arr) {
-  return (
-    _arrayWithoutHoles(arr) ||
-    _iterableToArray(arr) ||
-    _unsupportedIterableToArray(arr) ||
-    _nonIterableSpread()
-  );
-}
-
-function _nonIterableSpread() {
-  throw new TypeError(
-    "Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
-  );
-}
-
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
-    return _arrayLikeToArray(o, minLen);
-}
-
-function _iterableToArray(iter) {
-  if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter))
-    return Array.from(iter);
-}
-
-function _arrayWithoutHoles(arr) {
-  if (Array.isArray(arr)) return _arrayLikeToArray(arr);
-}
-
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-  for (var i = 0, arr2 = new Array(len); i < len; i++) {
-    arr2[i] = arr[i];
-  }
-  return arr2;
-}
-
 var main = function main() {
   var selectors = new (function () {
     this.page = document.querySelector("body");
@@ -91,7 +49,7 @@ var main = function main() {
     var _this = this;
 
     this.setProductElements = function () {
-      model.productList = _toConsumableArray(
+      model.productList = Array.prototype.slice.call(
         selectors.selectedSwiper.querySelectorAll(".default")
       );
     };
@@ -100,7 +58,7 @@ var main = function main() {
       model.containerWidth = selectors.brSwiperContainer.offsetWidth;
       model.productWidth = model.containerWidth / model.productsToShow;
       model.productList.forEach(function (product) {
-        product.style.width = "".concat(model.productWidth, "px");
+        product.style.width = model.productWidth + "px";
       });
     };
 
@@ -133,10 +91,8 @@ var main = function main() {
       selectors.brSwiperFocus.classList.add("focus");
       selectors.brSwiperPrev.classList.add("prev");
       selectors.brSwiperNext.classList.add("next");
-      selectors.selectedSwiper.style.left = "-".concat(
-        model.productWidth * swiperPosition,
-        "px"
-      );
+      selectors.selectedSwiper.style.left =
+        "-" + model.productWidth * swiperPosition + "px";
 
       _this.createProductCTA(selectors.brSwiperFocus);
     };
@@ -148,9 +104,12 @@ var main = function main() {
       var productLink = selector.querySelector("a").getAttribute("href");
       selectors.brSwiperProductInfo.innerHTML = productInfo;
       selectors.brSwiperProductPrize.innerHTML = productPrize;
-      selectors.brSwiperProductCounter.innerHTML = "Producto <span>"
-        .concat(productOrder, "</span> de <span>")
-        .concat(model.productList.length, "</span>");
+      selectors.brSwiperProductCounter.innerHTML =
+        "Producto <span>" +
+        productOrder +
+        "</span> de <span>" +
+        model.productList.length +
+        "</span>";
       selectors.brSwiperProductCTA.setAttribute("href", productLink);
     };
 
@@ -165,15 +124,11 @@ var main = function main() {
     this.swipeOne = function (direction) {
       var previousLeft = parseFloat(selectors.selectedSwiper.style.left);
       direction === "left" &&
-        (selectors.selectedSwiper.style.left = "".concat(
-          previousLeft - model.productWidth,
-          "px"
-        ));
+        (selectors.selectedSwiper.style.left =
+          previousLeft - model.productWidth + "px");
       direction === "right" &&
-        (selectors.selectedSwiper.style.left = "".concat(
-          previousLeft + model.productWidth,
-          "px"
-        ));
+        (selectors.selectedSwiper.style.left =
+          previousLeft + model.productWidth + "px");
     };
 
     this.resetClasses = function () {
@@ -188,15 +143,12 @@ var main = function main() {
 
     this.resetedSwipersWrapper = function () {
       view.resetClasses();
-
-      var wrappers = _toConsumableArray(selectors.brSwiperWrapper).map(
-        function (wrapper) {
-          wrapper.classList.remove("selected");
-          wrapper.classList.add("unselected");
-          return wrapper;
-        }
-      );
-
+      var wrappers = Array.prototype.slice.call(selectors.brSwiperWrapper);
+      wrappers.forEach(function (wrapper) {
+        wrapper.classList.remove("selected");
+        wrapper.classList.add("unselected");
+        return wrapper;
+      });
       return wrappers;
     };
 
@@ -235,10 +187,8 @@ var main = function main() {
       var previousLeft = parseFloat(selectors.selectedSwiper.style.left);
       view.setProductWidth();
       var reducctionFactor = previousWidth / model.productWidth;
-      selectors.selectedSwiper.style.left = "".concat(
-        previousLeft / reducctionFactor,
-        "px"
-      );
+      selectors.selectedSwiper.style.left =
+        previousLeft / reducctionFactor + "px";
     };
 
     this.onPrevious = function () {
@@ -354,6 +304,8 @@ var mainIe = function mainIe() {
     this.page = document.querySelector("body");
     this.brSwiperContainer = this.page.querySelectorAll(".br-swiper-container");
     this.brSwiperWrapper = this.page.querySelectorAll(".br-swiper-wrapper");
+    this.brHeader = this.page.querySelectorAll(".br-header");
+    this.brSwiperToggle = this.page.querySelectorAll(".br-swiper-toggle");
     this.brSwiperDefault = this.page.querySelectorAll(".default");
     this.brHistoryImgContainer = this.page.querySelectorAll(
       ".br-history-se-ctnt-block-img-container"
@@ -410,6 +362,10 @@ var mainIe = function mainIe() {
         "br-history-se-ctnt-block"
       );
 
+      _this3.toggleIeClasses(selectors.brHeader, "br-header");
+
+      _this3.toggleIeClasses(selectors.brSwiperToggle, "br-swiper-toggle");
+
       _this3.addProductCTA();
     };
 
@@ -417,7 +373,7 @@ var mainIe = function mainIe() {
       var selectorsListToArray = Array.apply(null, selectorsNode);
       selectorsListToArray.forEach(function (e) {
         e.className = "";
-        e.classList.add("".concat(className, "-ie"));
+        e.classList.add(className + "-ie");
       });
     };
 
@@ -478,7 +434,7 @@ var mainNoSwiper = function mainNoSwiper() {
       var selectorsListToArray = Array.apply(null, selectorsNode);
       selectorsListToArray.forEach(function (e) {
         e.className = "";
-        e.classList.add("".concat(className, "-ie"));
+        e.classList.add(className + "-ie");
       });
     };
 
